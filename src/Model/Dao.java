@@ -11,7 +11,7 @@ public class Dao {
 
 	private String url = "jdbc:mysql://localhost:3306/student";
 	private String user = "root";
-	private String pass = "";
+	private String pass = "root";
 	
 	public boolean insert(String sql, User s) {
 		boolean result = true ;
@@ -21,6 +21,10 @@ public class Dao {
 			PreparedStatement ps = con.prepareStatement(sql);
 			ps.setInt(1, s.getId());
 			ps.setString(2, s.getPassword());
+			ps.setInt(3, s.getContactId());
+			ps.setString(4, s.getName());
+			ps.setString(5, s.getEmail());
+			ps.setString(6, s.getPhone());
 			ps.executeUpdate();
 		} catch (ClassNotFoundException e) {
 			// TODO Auto-generated catch block

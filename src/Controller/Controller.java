@@ -40,7 +40,7 @@ public class Controller extends HttpServlet {
 		Dao db = new Dao();
 			if(button.equals("Insert"))
 			{
-				sql = "Insert into student2 values(?,?)";
+				sql = "Insert into student2 values(?,?,?,?,?,?)";
 				int id=Integer.parseInt(request.getParameter("t1"));
 				String password=request.getParameter("t2");			
 				s = new User (id,password) ;		
